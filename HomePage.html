@@ -77,7 +77,56 @@
                             </div>
                         </div>
                     </div>
-    
+                    <div class="col-9 mt-5 p-3 bg-light">
+                        <div id="courseContainer" class="display-flex-col width-height">
+                            
+                            <input v-model.trim="searchInput" type="search" class="form-control border border-2 border-primary" />
+                            <label class="form-label" for="form1" style="font-size: 20px;"> Search... </label>
+                            
+                            <div id="subjects" class="card p-4">
+                                <div class="subject border border-3 mt-2" v-for="subject in searchItems">
+                                    <figure>
+                                        <img class="image" style="margin-left: 100px;" v-bind:src="subject.image">
+                                    </figure>
+                                    <div class="card-body bg-Light">
+                                        <div class="info_container">
+                                            <p class="card-text">Subject: {{subject.courses}}</p>
+                                            <p class="card-text">Location: {{subject.location}}</p>
+                                            <p class="card-text">Price: {{subject.price}}</p>
+                                            <p class="card-text">Spaces: {{subject.availableSpace}}</p>
+                                        </div>
+                                        <button class="btn btn-success w-50  buttonsuccess" v-if="subject.availableSpace > 0" v-on:click="addToCart(subject)">Add To Cart</button>
+                                        <button class="btn btn-danger w-50 buttonred" v-else disabled>Add To Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+            </section>
+            
+            <div class="container-fluid" v-else>
+                <div class="row">
+                    <div class="col-md-4 bg-light mt-5">
+                        <div id="Checkout" class="border p-3">
+                            <h2 class="text-primary"> Checkout </h2>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Address:</span>
+                                </div>
+                                <input type="text" class="form-control" v-model.trim="customer.Address" aria-label="Small">
+                            </div>
+
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" pattern="[A-Za-z]" id="inputGroup-sizing-sm">Contact Number:</span>
+                                </div>
+                                <input type="text" class="form-control" v-model.trim="customer.Contact">
+                            </div>
+                            <button class="btn buttonsuccess text-white" v-on:click="showAlert" v-if="placeOrder"> Book Order</button>
+                        </div>
+                    </div>
+                    
 
 </body>
 
