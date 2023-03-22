@@ -152,9 +152,69 @@
     </div>
 </main>
 </div>
-
-                    
-
 </body>
+<script type="text/javascript">
+    var webapp = new Vue({
+
+        el: "#webapp",
+        data: {
+            website: "After School Club",
+            condition: "courses",
+            order: "ascending",
+            searchInput: "",
+            showSubjects: true,
+            
+            customer: {
+                Name: "",
+                Contact: "",
+            },
+
+            subjects: [{
+
+                courses: "English Language",
+                location: 'Burj Khalifa',
+                price: "500",
+                detail:"ABCD",
+                availableSpace: 6,
+                image: "img/englishlanguage.jpg"
+            }, {
+                courses: "Swimming",
+                location: 'Burj Al Arab',
+                price: "3000",
+                detail:"ABCD",
+                availableSpace: 9,
+                image: "img/swimming.jpg"
+            },],
+            subject: this.subject,
+            cart: [],
+
+        },
+        methods: {
+            addToCart(subject) {
+                subject.availableSpace--
+                    this.cart.push(subject)
+            },
+            showAlert() {
+                alert('Order Submitted')
+            },
+            removeFromCart(cart_item) {
+                cart_item.availableSpace++
+
+                    this.cart.splice(cart_item, 1)
+
+            },
+            checkout() {
+                this.showSubjects = this.showSubjects ? false : true
+            },
+            changeCondition(condition) {
+                this.condition = condition
+            },
+            changeOrder(order) {
+                this.order = order
+            }
+        },
+    })                
+
+</script>
 
 </html>
