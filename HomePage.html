@@ -213,6 +213,38 @@
                 this.order = order
             }
         },
+        
+        computed: {
+            showCourses() {
+                return this.showSubjects
+            },
+            cartItemCount() {
+                return this.cart.length || "Please add item";
+            },
+            removeFromcart() {
+                return this.cart.length > 0
+            },
+            placeOrder() {
+                const letters = /^[a-z ,.'-]+$/i;
+                const numbers = /^[0-9]+$/;
+                let valid = true
+                if (this.customer.Name.match(letters) == null) {
+                    valid = false
+                }
+                if (this.customer.Contact.match(numbers) == null) {
+                    valid = false
+                }
+                if (valid) {
+                    return true
+                } else {
+                    return false
+                }
+            },
+
+
+            
+        }
+
     })                
 
 </script>
