@@ -9,11 +9,6 @@
     flex-direction: row;
 }
 
-
-/* .display-flex-col {
-    flex-direction: column;
-} */
-
 .width {
     width: 100%;
 }
@@ -32,8 +27,7 @@ header {
     padding: 0.5rem;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: 1px 6px 6px #21214230;
-}
+    }
 
 header button {
     font-size: 1rem;
@@ -60,22 +54,6 @@ header button {
     justify-content: space-around;
     border-radius: 1rem;
 }
-
-
-/*
-.subject .info_container {
-    padding: 0.5rem;
-} */
-
-
-/* .subject button {
-    width: 50%;
-    align-self: center;
-    padding: 0.75rem 0;
-    background-color: rgb(0, 179, 255);
-    border-radius: 0.5rem;
-} */
-
 .subject figure {
     width: 120px;
 }
@@ -93,30 +71,21 @@ header button {
 }
 
 .bgchange {
-    background: #314755;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #26a0da, #314755);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #26a0da, #314755);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: azure;
+    background: #6aa868;
+    background: -webkit-linear-gradient(to right, #dad726, #314755);
+    background: linear-gradient(to right, #d6d322, #314755);
+    color: rgb(12, 22, 22);
 }
 
 .buttonsuccess {
-    background: #1A2980;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #26D0CE, #1A2980);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #26D0CE, #1A2980);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #1a804d;
+    background: -webkit-linear-gradient(to right, #c3dddd, #081142);
+    background: linear-gradient(to right, #c3dddd, #081142);
     color: white;
 }
 
 .buttonred {
     background: #D31027;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #EA384D, #D31027);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #EA384D, #D31027);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+    }

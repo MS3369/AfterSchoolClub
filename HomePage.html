@@ -20,7 +20,7 @@
         <div class="container-fluid bgchange">
             <div class="row">
                 <div class="col-10">
-                    <h1>{{website}}</h1>
+                    <h1 class="text-center" style="font-size: 60px; color: whitesmoke;">After School Club</h1>
                 </div>
                 <div class="col-2 mt-2">
                     <div v-if="showCourses">
@@ -35,7 +35,7 @@
                 </button>
                     </div>
                     <div v-else>
-                        <button class="btn btn-dark" v-on:click="checkout">
+                        <button class="btn btn-danger" v-on:click="checkout">
                     <i class='bx bx-left-arrow-alt'></i>
                     Previous
                 </button>
@@ -47,47 +47,47 @@
         <main class="display-flex-col width-height">
             <section id="coursesPage" v-if="showCourses">
                 <div id="container" class="display-flex-row width-height">
+                    
                     <div class="col-3 mt-5">
-                        <div class="p-4 bg-light">
-                            <h3 class=" border border-3 p-3 border-primary rounded" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;">Sorting</h3>
+                        <label class="form-label" for="form1" style="font-size: 20px;"> Search... </label>
+                        <input v-model.trim="searchInput" type="search" class="form-control" />
+                        <div class="p-4 ">
+                            <h3 class=" p-3 border-primary rounded" style="font-weight: bold; font-family: 'Times New Roman', Times, serif;">Sorting</h3>
                             <div id="searchBy">
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container p-2">
                                     <input name="searchRadiobtn" type="radio" v-on:click="changeCondition('courses') " checked>
                                     <label for="searchRadiobtn">Subject</label>
                                 </div>
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container  p-2">
                                     <input name="searchRadiobtn" type="radio" v-on:click="changeCondition('location')">
                                     <label for="searchRadiobtn">Location</label>
                                 </div>
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container p-2">
                                     <input name="searchRadiobtn" type="radio" v-on:click="changeCondition('price')">
                                     <label for="searchRadiobtn">Price</label>
                                 </div>
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container p-2 ">
                                     <input name="searchRadiobtn" type="radio" v-on:click="changeCondition('availability')">
                                     <label for="searchRadiobtn">Availability</label>
                                 </div>
                             </div>
                             <div id="sortBy">
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container p-2">
                                     <input name="orderRadiobtn" type="radio" v-on:click="changeOrder('ascending')">
                                     <label for="orderRadiobtn">Ascending</label>
                                 </div>
-                                <div class="radio_container border border-2 p-3 border-primary rounded">
+                                <div class="radio_container p-2  ">
                                     <input name="orderRadiobtn" v-on:click="changeOrder('descending')" type="radio">
                                     <label for="orderRadiobtn">Descending</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-9 mt-5 p-3 bg-light">
+                    <div class="col-9 mt-5 p-3 ">
                         <div id="courseContainer" class="display-flex-col width-height">
                             
-                            <input v-model.trim="searchInput" type="search" class="form-control border border-2 border-primary" />
-                            <label class="form-label" for="form1" style="font-size: 20px;"> Search... </label>
-                            
                             <div id="subjects" class="card p-4">
-                                <div class="subject border border-3 mt-2" v-for="subject in searchItems">
+                                <div class="subject border border-1 mt-2" v-for="subject in searchItems">
                                     <figure>
                                         <img class="image" style="margin-left: 100px;" v-bind:src="subject.image">
                                     </figure>
@@ -111,20 +111,20 @@
             
             <div class="container-fluid" v-else>
                 <div class="row">
-                    <div class="col-md-4 bg-light mt-5">
+                    <div class="col-md-4 mt-5">
                         <div id="Checkout" class="border p-3">
                             <h2 class="text-primary"> Checkout </h2>
                             
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Name:</span>
+                                    <span class="" id="inputGroup-sizing-sm">Name: &nbsp;</span>
                                 </div>
                                 <input type="text" class="form-control" v-model.trim="customer.Name" aria-label="Small">
                             </div>
 
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Contact Number:</span>
+                                    <span class="" id="inputGroup-sizing-sm">Contact Number:&nbsp; </span>
                                 </div>
                                 <input type="number" min="0" class="form-control"   v-model.trim="customer.Contact">
                             </div>
@@ -161,7 +161,7 @@
 
         el: "#webapp",
         data: {
-            website: "After School Club",
+            
             condition: "courses",
             order: "ascending",
             searchInput: "",
