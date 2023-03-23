@@ -211,13 +211,13 @@
                 return this.cart.length > 0
             },
             placeOrder() {
-                const letters = /^[a-z ,.'-]+$/i;
-                const numbers = /^[0-9]+$/;
+                const Name = /^[a-z ,.'-]+$/i;
+                const pnumber = /^[0-9]+$/;
                 let valid = true
-                if (this.customer.Name.match(letters) == null) {
+                if (this.customer.Name.match(Name) == null) {
                     valid = false
                 }
-                if (this.customer.Contact.match(numbers) == null) {
+                if (this.customer.Contact.match(pnumber) == null) {
                     valid = false
                 }
                 if (valid) {
