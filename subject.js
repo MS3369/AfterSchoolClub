@@ -78,7 +78,7 @@ let   subjects  = [
         price: "250",
         "detail": 'this is a beginner history class',
         availableSpace: 5,
-        image: "img/History.jpg"
+        image: "img/history.jpg"
 
     },
  ]
